@@ -47,7 +47,7 @@ Need your support to speed up the website! ⚡⚡
 - 🙆‍♂️ **Profile Management** - Add a username, name and avatar
 - 🌎 **Multilingual** - Currently support English and Traditional Chinese
 - 📱 **PWA Support** - Full progessive web app support
-
+ 
 
 ## Coming Soon
 - 👨‍👦‍👧👧‍👦 **Group System** - Create a group with user management system (In progress)
