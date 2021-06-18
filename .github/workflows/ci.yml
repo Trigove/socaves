@@ -46,12 +46,3 @@ jobs:
 
       - name: Run linter 👀
         run: yarn lint
-
-      - name: Install xvfb 👨🏻‍💻
-        run: sudo apt-get install xvfb
-
-      - name: Fix watchers 📦
-        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-
-      - name: Run tests 🧪
-        run: xvfb-run --auto-servernum yarn test
