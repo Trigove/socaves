@@ -1,0 +1,102 @@
+@import "@material/tab-bar/mdc-tab-bar";
+@import "@material/tab-scroller/mdc-tab-scroller";
+@import "@material/tab-indicator/mdc-tab-indicator";
+@import "@material/tab/mdc-tab";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap');
+
+html {
+  &:lang(en-US) {
+    font-family: 'Inter', sans-serif;
+  }
+
+
+  &:lang(zh-CN),
+  :lang(zh-HK),
+  :lang(zh-MO),
+  :lang(zh-TW) {
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+}
+
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  overflow: auto;
+}
+
+
+
+:root {
+  --real-height: 100vh; //Real application height change in realHeight.js
+  --vs-primary: 249, 115, 22; //Reset vuesax default color
+  --sidebar-width: #{$sidebar-width}; //Make it in root for template use
+  --navbar-height: #{$navbar-height};
+  --plyr-color-main: #f97316; //Video player colorhttps://github.com/sampotts/plyr
+  //For tab bar
+  --mdc-theme-primary: var(--color-orange-500);
+  --mdc-typography-button-text-transform: none;
+  --mdc-typography-button-letter-spacing: 0.01em;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+//Fix black border problem
+[class*=vs-] {
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+
+//Vue animation
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.65s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+//Lazy loading animation
+img {
+  opacity: 1;
+  transition: opacity 0.8s;
+
+  &[data-src] {
+    opacity: 0;
+  }
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dddddd;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+
+  &:hover {
+    background-color: #cbcaca;
+  }
+
+  &:active {
+    background-color: #aaaaaa;
+  }
+}

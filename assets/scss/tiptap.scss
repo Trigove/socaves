@@ -1,0 +1,241 @@
+//Style for tiptap editor
+.ProseMirror {
+  outline: 0;
+
+  >*+* {
+    margin-top: 0.75em;
+  }
+}
+
+[data-theme="date-tippy"] {
+  .tippy-content {
+    font-size: 12px;
+  }
+}
+
+[data-theme="mention-tippy"] {
+  .tippy-content {
+    padding: 0;
+  }
+}
+
+.editor {
+  position: relative;
+}
+
+.editor__content {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+
+  * {
+    caret-color: currentColor;
+  }
+
+  // pre {
+  //   padding: 0.7rem 1rem;
+  //   border-radius: 5px;
+  //   background: $color-black-tiptap;
+  //   color: $color-white-tiptap;
+  //   font-size: 0.8rem;
+  //   overflow-x: auto;
+
+  //   code {
+  //     display: block;
+  //   }
+  // }
+
+  // p code {
+  //   padding: 0.2rem 0.4rem;
+  //   border-radius: 5px;
+  //   font-size: 0.8rem;
+  //   font-weight: bold;
+  //   background: rgba($color-black-tiptap, 0.1);
+  //   color: rgba($color-black-tiptap, 0.8);
+  // }
+
+
+  .mention {
+    color: #f97316 !important;
+    text-decoration: none !important;
+  }
+
+  a[data-video-time],
+  .mention {
+    white-space: nowrap !important;
+  }
+
+  a[data-video-time] {
+    color: #f97316;
+    text-decoration: none;
+    background-color: rgba(#f97316, 0.1);
+    border-radius: 0.3rem;
+    font-weight: 500;
+    padding: 0.1rem 0.3rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    cursor: pointer;
+  }
+
+  code {
+    display: block;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    font-family: 'JetBrainsMono', monospace;
+    background: #0D0D0D;
+    color: #FFF;
+    font-size: 0.8rem;
+    overflow-x: auto;
+
+
+    >a {
+      color: #FFF !important;
+      // text-decoration: none !important;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 1rem;
+  }
+
+  li>p,
+  li>ol,
+  li>ul {
+    margin: 0;
+  }
+
+  a {
+    color: $link-color-tiptap;
+    text-decoration: underline;
+  }
+
+  blockquote {
+    border-left: 3px solid rgba($color-black-tiptap, 0.1);
+    color: rgba($color-black-tiptap, 0.8);
+    padding-left: 0.8rem;
+    font-style: italic;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 3px;
+  }
+
+  table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+
+    td,
+    th {
+      min-width: 1em;
+      border: 2px solid $color-grey-tiptap;
+      padding: 3px 5px;
+      vertical-align: top;
+      box-sizing: border-box;
+      position: relative;
+
+      >* {
+        margin-bottom: 0;
+      }
+    }
+
+    th {
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .selectedCell:after {
+      z-index: 2;
+      position: absolute;
+      content: '';
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(200, 200, 255, 0.4);
+      pointer-events: none;
+    }
+
+    .column-resize-handle {
+      position: absolute;
+      right: -2px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      z-index: 20;
+      background-color: #adf;
+      pointer-events: none;
+    }
+  }
+
+  .tableWrapper {
+    margin: 1em 0;
+    overflow-x: auto;
+  }
+
+  .resize-cursor {
+    cursor: ew-resize;
+    cursor: col-resize;
+  }
+}
+
+.menubar {
+  transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;
+
+  &.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &.is-focused {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.2s, opacity 0.2s;
+  }
+
+  &__button {
+    font-weight: bold;
+    display: inline-flex;
+    background: transparent;
+    border: 0;
+    color: $color-black-tiptap;
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.2rem;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &:hover {
+      background-color: rgba($color-black-tiptap, 0.05);
+    }
+
+    &.is-active {
+      background-color: rgba($color-black-tiptap, 0.1);
+    }
+  }
+
+  span#{&}__button {
+    font-size: 13.3333px;
+  }
+}
+
+
+
+// .tippy-box[data-theme~='dark'] {
+//   background-color: $color-black-tiptap;
+//   font-size: 1rem;
+//   text-align: inherit;
+//   color: $color-white-tiptap;
+//   border-radius: 5px;
+// }

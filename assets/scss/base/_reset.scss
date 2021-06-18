@@ -1,0 +1,163 @@
+.vs-input,
+.vs-input-parent {
+  width: 100%;
+}
+
+
+
+button:focus {
+  @apply outline-none;
+}
+
+//Fix avatar responsive problem
+// .vs-avatar-content {
+//   max-width: 43px;
+//   width: 100% !important;
+//   height: 43px;
+// }
+
+//Remove the floating effect of input
+.vs-input:focus~.vs-input__icon,
+.vs-input__icon--click:hover.vs-input__icon--after {
+  box-shadow: initial !important;
+  background: inherit;
+  transform: none;
+}
+
+.vs-input__icon {
+  box-shadow: none;
+  background: transparent;
+}
+
+
+//No scale for avatar hover
+.vs-avatar-content:hover img {
+  transform: none !important;
+}
+
+.vs-tooltip.shadow {
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.05) !important;
+}
+
+.vs-button:disabled {
+  opacity: 0.4;
+}
+
+.vs-dialog {
+  max-height: calc(var(--real-height) - 30px) !important;
+  overflow: hidden;
+  //  overflow-x: hidden;
+  position: relative;
+  // margin-bottom: 60vh;
+
+  //Disable bounce animation
+  &--rebound {
+    animation: none !important;
+  }
+
+  //Make the header sticky (fixed when scroll)
+  &__header {
+    @apply sticky;
+    display: block;
+    top: 0;
+    background-color: inherit;
+    z-index: 999;
+    width: 100%;
+    //For for ios
+    border-top-left-radius: var(--vs-radius);
+    border-top-right-radius: var(--vs-radius);
+  }
+
+  &__footer {
+    padding: 0;
+  }
+
+  //Remove extra padding from the content
+  &-content {
+    z-index: var(--vs-zindex-3);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__content {
+    border-radius: 0;
+    overflow-y: auto;
+  }
+
+  &__loading {
+    z-index: 9999;
+  }
+
+  &__close {
+    display: none;
+  }
+}
+
+//Remove all ripple effect
+.vs-ripple-content {
+  display: none !important;
+}
+
+.vs-button {
+  &--flat {
+    transition-duration: .2s;
+  }
+
+  &--border {
+    &:focus {
+      color: rgba(var(--vs-color), 1);
+      background: none;
+    }
+
+    &:hover:before {
+      border: 2px solid rgba(var(--vs-color), 0.7);
+    }
+  }
+
+  &--transparent {
+
+    background: transparent !important;
+
+    //Remove transparent button hover effect
+    &:hover {
+      opacity: 0.75;
+
+      &::before {
+        opacity: 0;
+      }
+    }
+
+    &::before {
+      background: none !important;
+    }
+
+    &:focus {
+      color: rgba(var(--vs-color), 1);
+    }
+
+  }
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.mdc-tab .mdc-tab__ripple::before,
+.mdc-tab .mdc-tab__ripple::after {
+  opacity: 0 !important;
+}
+
+.plyr__control:not(.plyr__control--overlaid){
+  background: transparent !important;
+}
+
+body {
+  overscroll-behavior: contain; //Fix conflict with pull to refresh.js
+
+  //Try fix for safari 
+  &[style*="overflow: hidden;"] {
+    //If body cannot scroll pos fixed it also double prevent
+    touch-action: none !important;
+    -ms-touch-action: none !important;
+  }
+}

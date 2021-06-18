@@ -1,0 +1,72 @@
+/* Real application height */
+.min-h-screen-real {
+  min-height: var(--real-height) !important;
+
+  /* Real min height that minus navbar height */
+  &-nav {
+    min-height: calc(var(--real-height) - var(--navbar-height)) !important;
+  }
+}
+
+/* Button no padding */
+.btn-p-0 {
+  .vs-button__content {
+    padding: 0;
+  }
+}
+
+
+.max-h-screen-real {
+  max-height: var(--real-height) !important;
+
+  /* Real min height that minus navbar height */
+  &-nav {
+    max-height: calc(var(--real-height) - var(--navbar-height)) !important;
+  }
+}
+
+
+.h-screen-real {
+  height: var(--real-height) !important;
+
+  /* Real min height that minus navbar height */
+  &-nav {
+    height: calc(var(--real-height) - var(--navbar-height)) !important;
+  }
+}
+
+/* When hover the element will be darker when click the element will be more dark */
+.click-dark-brightness {
+  @apply transition-all;
+
+  &:hover {
+    filter: brightness(0.95);
+  }
+
+  &:active {
+    filter: brightness(0.9);
+  }
+}
+
+/* Skeleton loading */
+.skeleton-loading {
+  animation: 2.25s blink ease-in-out infinite;
+
+  &-fast {
+    animation: 1s blink ease-in-out infinite;
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  15%,
+  85%,
+  100% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: .3;
+  }
+}

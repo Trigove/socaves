@@ -1,0 +1,33 @@
+//Make vs dialog as full screen
+@mixin fullscreen-vs-dialog($footer-height: null) {
+  ::v-deep.vs-dialog-content {
+    padding: 0 !important;
+    overflow: hidden;
+  }
+
+  ::v-deep .vs-dialog__header {
+    border-radius: 0;
+  }
+
+  ::v-deep .vs-dialog__content {
+    max-width: none !important;
+    max-height: none !important;
+
+    @if $footer-height {
+      height: calc(var(--real-height, 95vh) - #{$footer-height} - env(safe-area-inset-bottom, 0)) !important;
+    }
+
+    @else {
+      height: calc(var(--real-height) - env(safe-area-inset-bottom, 0));
+    }
+  }
+
+  ::v-deep .vs-dialog {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+}
