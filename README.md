@@ -32,7 +32,6 @@ Need your support to speed up the website! ⚡⚡
 ## What Is SOCAVES?
 <p>SOCAVES is a fully open source social media platform, with transparent algorithms, api and frontend code.</p>
 <p>Privacy is one of our core value, we aim to build a privacy-focused social media platform.</p>
-<p>The project originally started from a course called "Programming Project" at the Hong Kong Community College, and later our team turned SOCAVES into a real project.</p>
 
 ![image](https://user-images.githubusercontent.com/6602723/122238611-db34a500-cef2-11eb-95ab-ff0503f23266.png)
 
